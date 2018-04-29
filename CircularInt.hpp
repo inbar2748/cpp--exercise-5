@@ -521,15 +521,16 @@ inline int operator>=(int number, const CircularInt& hour) {
 	else return 0;
 
 }
-/*
-inline int operator>=(const CircularInt& x, const CircularInt& y) {
 
+inline int operator>=(const CircularInt& x, const CircularInt& y) {
+/*
 	if (x.current >= y.current) return 1;
 
-	else return 0;
+	else */
+		return 0;
 
 }
-*/
+
 
 
 inline CircularInt operator-=(const CircularInt& hour, const int number) {
