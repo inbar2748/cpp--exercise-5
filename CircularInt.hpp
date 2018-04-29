@@ -18,7 +18,7 @@ class CircularInt {
 
 private:
 
-	int first, last;
+	int first, last; // המספר הגדול ביותר והקטן ביותר בתחום
 
 	int current;
 
