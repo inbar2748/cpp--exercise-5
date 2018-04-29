@@ -18,17 +18,17 @@ class CircularInt {
 
 private:
 
-	int first, last;
+	int min, max;
 
-	int current;
+	int now;
 
 
 
 public:
 
-	CircularInt(int x, int y);
+	CircularInt(int a, int b);
 
-	CircularInt(const CircularInt& hour);
+	CircularInt(const CircularInt& h);
 
 
 
@@ -36,25 +36,25 @@ public:
 
 	CircularInt& operator+=(const int);
 
-	CircularInt& operator+=(const CircularInt& hour);
+	CircularInt& operator+=(const CircularInt& h);
 
 
 
 	CircularInt& operator-=(const int);
 
-	CircularInt& operator-=(const CircularInt& hour);
+	CircularInt& operator-=(const CircularInt& h);
 
 
 
 	CircularInt& operator*=(const int);
 
-	CircularInt& operator*=(const CircularInt& hour);
+	CircularInt& operator*=(const CircularInt& h);
 
 
 
 	CircularInt& operator/=(const int);
 
-	CircularInt& operator/=(const CircularInt& hour);
+	CircularInt& operator/=(const CircularInt& h);
 
 
 
@@ -72,183 +72,183 @@ public:
 
 	CircularInt& operator=(const int);
 
-	CircularInt& operator=(const CircularInt& hour);
+	CircularInt& operator=(const CircularInt& h);
 
 
 
-	friend int operator >= (const CircularInt& hour, int number);
+	friend int operator >= (const CircularInt& h, int num);
 
-	friend int operator >= (int number, const CircularInt& hour);
+	friend int operator >= (int num, const CircularInt& h);
 
-	friend int operator >= (const CircularInt& x, const CircularInt& y);
+	friend int operator >= (const CircularInt& a, const CircularInt& b);
 
 
 
-	friend int operator > (const CircularInt& hour, int number);
+	friend int operator > (const CircularInt& h, int num);
 
-	friend int operator > (int num, const CircularInt& hour;
+	friend int operator > (int num, const CircularInt& h);
 
-	friend int operator > (const CircularInt& x, const CircularInt& y);
+	friend int operator > (const CircularInt& a, const CircularInt& b);
 
 
 
-	friend int operator <= (const CircularInt& hour, int number);
+	friend int operator <= (const CircularInt& h, int num);
 
-	friend int operator <= (int number, const CircularInt& hour);
+	friend int operator <= (int num, const CircularInt& h);
 
-	friend int operator <= (const CircularInt& x, const CircularInt& y);
+	friend int operator <= (const CircularInt& a, const CircularInt& b);
 
 
 
-	friend int operator < (const CircularInt& hour, int number);
+	friend int operator < (const CircularInt& h, int num);
 
-	friend int operator < (int number, const CircularInt& hour);
+	friend int operator < (int num, const CircularInt& h);
 
-	friend int operator < (const CircularInt& x, const CircularInt& y);
+	friend int operator < (const CircularInt& a, const CircularInt& b);
 
 
 
-	friend int operator == (const CircularInt& hour, int number);
+	friend int operator == (const CircularInt& h, int num);
 
-	friend int operator == (int number, const CircularInt& hour);
+	friend int operator == (int num, const CircularInt& h);
 
-	friend int operator == (const CircularInt& x, const CircularInt& y);
+	friend int operator == (const CircularInt& a, const CircularInt& b);
 
 
 
-	friend int operator != (const CircularInt& hour, int number);
+	friend int operator != (const CircularInt& h, int num);
 
-	friend int operator != (int number, const CircularInt& hour);
+	friend int operator != (int num, const CircularInt& h);
 
-	friend int operator != (const CircularInt& x, const CircularInt& y);
+	friend int operator != (const CircularInt& a, const CircularInt& b);
 
 
 
-	friend CircularInt operator - (const CircularInt& hour);
+	friend CircularInt operator - (const CircularInt& h);
 
-	friend CircularInt operator - (const CircularInt& hour, const int number);
+	friend CircularInt operator - (const CircularInt& h, const int num);
 
-	friend CircularInt operator - (const int number, const CircularInt& hour);
+	friend CircularInt operator - (const int num, const CircularInt& h);
 
-	friend CircularInt operator - (const CircularInt& x, const CircularInt& y);
+	friend CircularInt operator - (const CircularInt& a, const CircularInt& b);
 
 
 
-	friend CircularInt operator -= (const CircularInt& hour, const int number);
+	friend CircularInt operator -= (const CircularInt& h, const int num);
 
-	friend CircularInt operator -= (const int number, const CircularInt& hour);
+	friend CircularInt operator -= (const int num, const CircularInt& h);
 
-	friend CircularInt operator -= (const CircularInt& x, const CircularInt& y);
+	friend CircularInt operator -= (const CircularInt& a, const CircularInt& b);
 
 
 
-	friend CircularInt operator * (const CircularInt& hour, const int number);
+	friend CircularInt operator * (const CircularInt& h, const int num);
 
-	friend CircularInt operator * (const int number, const CircularInt& hour);
+	friend CircularInt operator * (const int num, const CircularInt& h);
 
-	friend CircularInt operator * (const CircularInt& x, const CircularInt& y);
+	friend CircularInt operator * (const CircularInt& a, const CircularInt& b);
 
 
 
-	friend CircularInt operator + (const CircularInt& hour);
+	friend CircularInt operator + (const CircularInt& h);
 
-	friend CircularInt operator + (const CircularInt & hour, const int number);
+	friend CircularInt operator + (const CircularInt & h, const int num);
 
-	friend CircularInt operator + (const int number, const CircularInt & hour);
+	friend CircularInt operator + (const int num, const CircularInt & h);
 
-	friend CircularInt operator + (const CircularInt & x, const CircularInt & y);
+	friend CircularInt operator + (const CircularInt & a, const CircularInt & b);
 
 
 
-	friend CircularInt operator - (const CircularInt & hour, const int number);
+	friend CircularInt operator - (const CircularInt & h, const int num);
 
-	friend CircularInt operator - (const int number, const CircularInt & hour);
+	friend CircularInt operator - (const int num, const CircularInt & h);
 
-	friend CircularInt operator - (const CircularInt & x, const CircularInt & y);
+	friend CircularInt operator - (const CircularInt & a, const CircularInt & b);
 
 
 
-	friend CircularInt operator / (const CircularInt & hour, const int number);
+	friend CircularInt operator / (const CircularInt & h, const int num);
 
-	friend CircularInt operator / (const int number, const CircularInt & hour);
+	friend CircularInt operator / (const int num, const CircularInt & h);
 
-	friend CircularInt operator / (const CircularInt & x, const CircularInt & y);
+	friend CircularInt operator / (const CircularInt & a, const CircularInt & b);
 
 
 
-	/*friend CircularInt operator /= (const CircularInt & hour, const int number);
+	/*friend CircularInt operator /= (const CircularInt & h, const int num);
 
-	friend CircularInt operator /= (const int number,const CircularInt & hour);
+	friend CircularInt operator /= (const int num,const CircularInt & h);
 
-	friend CircularInt operator /= (const CircularInt & x,const CircularInt & y);*/
+	friend CircularInt operator /= (const CircularInt & a,const CircularInt & b);*/
 
 
 
-	friend ostream& operator<<(ostream& o, const CircularInt &hour);
+	friend ostream& operator<<(ostream& os, const CircularInt &m);
 
-	friend istream& operator>>(istream& o, CircularInt &hour);
+	friend istream& operator>>(istream& os, CircularInt &m);
 
 };
 
 
 
-inline ostream& operator<<(ostream& o, const CircularInt &hour) {
+inline ostream& operator<<(ostream& os, const CircularInt &m) {
 
-	o << hour.current;
+	os << m.now;
 
-	return o;
+	return os;
 
 }
 
 
 
-inline istream& operator>>(istream& o, CircularInt &hour) {
+inline istream& operator>>(istream& os, CircularInt &m) {
 
 	int n;
 
-	o >> n;
+	os >> n;
 
-	hour.current = n;
+	m.now = n;
 
-	if (hour.current>hour.last) {
+	if (m.now>m.max) {
 
-		hour.current = hour.current%hour.last;
-
-	}
-
-	while (hour.current<hour.first) {
-
-		hour.current += hour.last;
+		m.now = m.now%m.max;
 
 	}
 
-	return o;
+	while (m.now<m.min) {
+
+		m.now += m.max;
+
+	}
+
+	return os;
 
 }
 
 
 
-inline ostream &operator<<(ostream &o, vector<int> v) {
+inline ostream &operator<<(ostream &os, vector<int> vec) {
 
 	string result = "";
 
-	for (unsigned int i = 0; i < v.size(); i++)
+	for (unsigned int i = 0; i < vec.size(); i++)
 
 	{
 
-		result = result + to_string(v[i]) + " ";
+		result = result + to_string(vec[i]) + " ";
 
 	}
 
-	return o << result;
+	return os << result;
 
 }
 
 
 
-inline int operator==(int number, const CircularInt& hour) {
+inline int operator==(int num, const CircularInt& h) {
 
-	if (number == hour.current) return 1;
+	if (num == h.now) return 1;
 
 	else return 0;
 
@@ -256,19 +256,9 @@ inline int operator==(int number, const CircularInt& hour) {
 
 
 
-inline int operator==(const CircularInt& x, const CircularInt& y) {
+inline int operator==(const CircularInt& a, const CircularInt& b) {
 
-	if (x.current == y.current) return 1;
-
-	else return 0;
-
-}
-
-
-
-inline int operator==(const CircularInt& x, int number) {
-
-	if (x.current == number) return 1;
+	if (a.now == b.now) return 1;
 
 	else return 0;
 
@@ -276,19 +266,9 @@ inline int operator==(const CircularInt& x, int number) {
 
 
 
-inline int operator!=(int number, const CircularInt& hour) {
+inline int operator==(const CircularInt& a, int num) {
 
-	if (number != hour.current) return 1;
-
-	else return 0;
-
-}
-
-
-
-inline int operator!=(const CircularInt& x, const CircularInt& y) {
-
-	if (x.current != y.current) return 1;
+	if (a.now == num) return 1;
 
 	else return 0;
 
@@ -296,9 +276,9 @@ inline int operator!=(const CircularInt& x, const CircularInt& y) {
 
 
 
-inline int operator!=(const CircularInt& x, int number) {
+inline int operator!=(int num, const CircularInt& h) {
 
-	if (x.current != number) return 1;
+	if (num != h.now) return 1;
 
 	else return 0;
 
@@ -306,11 +286,31 @@ inline int operator!=(const CircularInt& x, int number) {
 
 
 
-inline CircularInt operator-(const CircularInt& hour) {
+inline int operator!=(const CircularInt& a, const CircularInt& b) {
 
-	CircularInt temp(hour);
+	if (a.now != b.now) return 1;
 
-	temp.current = temp.last - temp.current;
+	else return 0;
+
+}
+
+
+
+inline int operator!=(const CircularInt& a, int num) {
+
+	if (a.now != num) return 1;
+
+	else return 0;
+
+}
+
+
+
+inline CircularInt operator-(const CircularInt& h) {
+
+	CircularInt temp(h);
+
+	temp.now = temp.max - temp.now;
 
 	return temp;
 
@@ -318,45 +318,11 @@ inline CircularInt operator-(const CircularInt& hour) {
 
 
 
-inline CircularInt operator-(const CircularInt& hour, const int number) {
+inline CircularInt operator-(const CircularInt& h, const int num) {
 
-	CircularInt temp(hour);
+	CircularInt temp(h);
 
-	temp -= number;
-
-	return temp;
-
-}
-
-
-
-inline CircularInt operator-(const int number, const CircularInt& hour) {
-
-	return -(hour - number);
-
-}
-
-inline CircularInt operator-(const CircularInt& x, const CircularInt& y) {
-
-	return x - y.current;
-
-}
-
-
-
-inline CircularInt operator+(const int number, const CircularInt& hour) {
-
-	return hour + number;
-
-}
-
-
-
-inline CircularInt operator+(const CircularInt & hour, const int number) {
-
-	CircularInt temp(hour);
-
-	temp += number;
+	temp -= num;
 
 	return temp;
 
@@ -364,43 +330,33 @@ inline CircularInt operator+(const CircularInt & hour, const int number) {
 
 
 
-inline CircularInt operator+(const CircularInt & x, const CircularInt & y) {
+inline CircularInt operator-(const int num, const CircularInt& h) {
 
-	return x + y.current;
+	return -(h - num);
+
+}
+
+inline CircularInt operator-(const CircularInt& a, const CircularInt& b) {
+
+	return a - b.now;
 
 }
 
 
 
-inline CircularInt operator*(const CircularInt& hour, const int number) {
+inline CircularInt operator+(const int num, const CircularInt& h) {
 
-	CircularInt temp(hour);
-
-	temp *= number;
-
-	return temp;
-
-}
-
-inline CircularInt operator*(const int number, const CircularInt& hour) {
-
-	return hour * number;
-
-}
-
-inline CircularInt operator*(const CircularInt& x, const CircularInt& y) {
-
-	return x * y.current;
+	return h + num;
 
 }
 
 
 
-inline CircularInt operator/(const CircularInt & hour, const int number) {
+inline CircularInt operator+(const CircularInt & h, const int num) {
 
-	CircularInt temp(hour);
+	CircularInt temp(h);
 
-	temp / number;
+	temp += num;
 
 	return temp;
 
@@ -408,11 +364,55 @@ inline CircularInt operator/(const CircularInt & hour, const int number) {
 
 
 
-inline CircularInt operator/(const int number, const CircularInt & hour) {
+inline CircularInt operator+(const CircularInt & a, const CircularInt & b) {
 
-	CircularInt temp(hour);
+	return a + b.now;
 
-	temp / number;
+}
+
+
+
+inline CircularInt operator*(const CircularInt& h, const int num) {
+
+	CircularInt temp(h);
+
+	temp *= num;
+
+	return temp;
+
+}
+
+inline CircularInt operator*(const int num, const CircularInt& h) {
+
+	return h * num;
+
+}
+
+inline CircularInt operator*(const CircularInt& a, const CircularInt& b) {
+
+	return a * b.now;
+
+}
+
+
+
+inline CircularInt operator/(const CircularInt & h, const int num) {
+
+	CircularInt temp(h);
+
+	temp / num;
+
+	return temp;
+
+}
+
+
+
+inline CircularInt operator/(const int num, const CircularInt & h) {
+
+	CircularInt temp(h);
+
+	temp / num;
 
 	return temp;
 
@@ -422,59 +422,33 @@ inline CircularInt operator/(const int number, const CircularInt & hour) {
 
 
 
-inline CircularInt operator/(const CircularInt & x, const CircularInt & y) {
+inline CircularInt operator/(const CircularInt & a, const CircularInt & b) {
 
-	return x / y.current;
+	return a / b.now;
 
 }
 
 
 
-inline int operator>(const CircularInt& hour, int number) {
+inline int operator>(const CircularInt& h, int num) {
 
-	if (hour.current > number) return 1;
+	if (h.now > num) return 1;
 
 	else return 0;
 
 }
 
-inline int operator>(int number, const CircularInt& hour) {
+inline int operator>(int num, const CircularInt& h) {
 
-	if (number > hour.current) return 1;
-
-	else return 0;
-
-}
-
-inline int operator>(const CircularInt& x, const CircularInt& y) {
-
-	if (x.current > y.current) return 1;
+	if (num > h.now) return 1;
 
 	else return 0;
 
 }
 
+inline int operator>(const CircularInt& a, const CircularInt& b) {
 
-
-inline int operator<(const CircularInt& hour, int number) {
-
-	if (hour.current < number) return 1;
-
-	else return 0;
-
-}
-
-inline int operator<(int number, const CircularInt& hour) {
-
-	if (number < hour.current) return 1;
-
-	else return 0;
-
-}
-
-inline int operator<(const CircularInt& x, const CircularInt&y) {
-
-	if (x.current < y.current) return 1;
+	if (a.now > b.now) return 1;
 
 	else return 0;
 
@@ -482,51 +456,25 @@ inline int operator<(const CircularInt& x, const CircularInt&y) {
 
 
 
-inline int operator<=(const CircularInt& hour, int number) {
+inline int operator<(const CircularInt& h, int num) {
 
-	if (hour.current <= number) return 1;
-
-	else return 0;
-
-}
-
-inline int operator<=(int number, const CircularInt& hour) {
-
-	if (number <= hour.current) return 1;
+	if (h.now < num) return 1;
 
 	else return 0;
 
 }
 
-inline int operator<=(const CircularInt& x, const CircularInt& y) {
+inline int operator<(int num, const CircularInt& h) {
 
-	if (x.current <= y.current) return 1;
-
-	else return 0;
-
-}
-
-
-
-inline int operator>=(const CircularInt& hour, int number) {
-
-	if (hour.current >= number) return 1;
+	if (num < h.now) return 1;
 
 	else return 0;
 
 }
 
-inline int operator>=(int number, const CircularInt& hour) {
+inline int operator<(const CircularInt& a, const CircularInt& b) {
 
-	if (number >= hour.current) return 1;
-
-	else return 0;
-
-}
-
-inline int operator>=(const CircularInt& x, const CircularInt& y) {
-
-	if (x.current >= y.current) return 1;
+	if (a.now < b.now) return 1;
 
 	else return 0;
 
@@ -534,24 +482,76 @@ inline int operator>=(const CircularInt& x, const CircularInt& y) {
 
 
 
-inline CircularInt operator-=(const CircularInt& hour, const int number) {
+inline int operator<=(const CircularInt& h, int num) {
 
-	CircularInt temp(hour);
+	if (h.now <= num) return 1;
 
-	temp.current -= number;
+	else return 0;
+
+}
+
+inline int operator<=(int num, const CircularInt& h) {
+
+	if (num <= h.now) return 1;
+
+	else return 0;
+
+}
+
+inline int operator<=(const CircularInt& a, const CircularInt& b) {
+
+	if (a.now <= b.now) return 1;
+
+	else return 0;
+
+}
+
+
+
+inline int operator>=(const CircularInt& h, int num) {
+
+	if (h.now >= num) return 1;
+
+	else return 0;
+
+}
+
+inline int operator>=(int num, const CircularInt& h) {
+
+	if (num >= h.now) return 1;
+
+	else return 0;
+
+}
+
+inline int operator>=(const CircularInt& a, const CircularInt& b) {
+
+	if (a.now >= b.now) return 1;
+
+	else return 0;
+
+}
+
+
+
+inline CircularInt operator-=(const CircularInt& h, const int num) {
+
+	CircularInt temp(h);
+
+	temp.now -= num;
 
 	return temp;
 
 }
 
-inline CircularInt operator-=(const int number, const CircularInt& hour) {
+inline CircularInt operator-=(const int num, const CircularInt& h) {
 
-	return hour -= number;
+	return h -= num;
 
 }
 
-inline CircularInt operator-=(const CircularInt& x, const CircularInt& y) {
+inline CircularInt operator-=(const CircularInt& a, const CircularInt& b) {
 
-	return x -= y.current;
+	return a -= b.now;
 
 }
