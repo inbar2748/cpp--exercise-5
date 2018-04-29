@@ -2,7 +2,7 @@
 #include <set>
 #include <iostream>
 #include <string>
-#include "CircularInt.h"
+#include "CircularInt.hpp"
 
 CircularInt::CircularInt(int x, int y)
 {
