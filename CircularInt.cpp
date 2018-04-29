@@ -4,6 +4,7 @@
 #include <string>
 #include "CircularInt.hpp"
 
+// בנאי מאתחל ע"י השמה ל המספר הקטן ביותר והמספר הגדול ביותר בטווח שנבחר
 CircularInt::CircularInt(int x, int y)
 {
 	if (x > y)
@@ -19,6 +20,7 @@ CircularInt::CircularInt(int x, int y)
 	this->current = this->first;
 }
 
+// בנאי מעתיק
 CircularInt::CircularInt(const CircularInt& hour)
 {
 	this->first = hour.first;
