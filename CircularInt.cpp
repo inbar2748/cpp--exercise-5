@@ -4,59 +4,59 @@
 #include <string>
 #include "CircularInt.h"
 
-CircularInt::CircularInt(int x, int y)
+CircularInt::CircularInt(int a, int b)
 {
-	if (x > y)
+	if (a > b)
 	{
-		this->last = x;
-		this->first = y;
+		this->max = a;
+		this->min = b;
 	}
 	else
 	{
-		this->first = x;
-		this->last = y;
+		this->min = a;
+		this->max = b;
 	}
-	this->current = this->first;
+	this->now = this->min;
 }
 
-CircularInt::CircularInt(const CircularInt& hour)
+CircularInt::CircularInt(const CircularInt& h)
 {
-	this->first = hour.first;
-	this->last = hour.last
-	this->current = hour.current;
+	this->min = h.min;
+	this->max = h.max;
+	this->now = h.now;
 }
 
-CircularInt& CircularInt::operator-=(const int number) {
-	this->current = this->current - number;
-	if (this->current < first)
+CircularInt& CircularInt::operator-=(const int num) {
+	this->now = this->now - num;
+	if (this->now < min)
 	{
-		this->current = this->current % last + last;
+		this->now = this->now % max + max;
 	}
 	return *this;
 }
 
-CircularInt& CircularInt::operator-=(const CircularInt& hour) {
-	this->current = this->current - hour.current;
-	if (this->current < first)
+CircularInt& CircularInt::operator-=(const CircularInt& h) {
+	this->now = this->now - h.now;
+	if (this->now < min)
 	{
-		this->current = this->current % last + last;
+		this->now = this->now % max + max;
 	}
 	return *this;
 }
 
-CircularInt& CircularInt::operator+=(const int number) {
-	this->current = this->current + number;
-	if (this->current > last)
+CircularInt& CircularInt::operator+=(const int num) {
+	this->now = this->now + num;
+	if (this->now > max)
 	{
-		this->current = this->current % last;
+		this->now = this->now % max;
 	}
 	return *this;
 }
-CircularInt& CircularInt::operator+=(const CircularInt& hour) {
-	this->current = this->current + hour.current;
-	if (this->current > last)
+CircularInt& CircularInt::operator+=(const CircularInt& h) {
+	this->now = this->now + h.now;
+	if (this->now > max)
 	{
-		this->current = this->current % last;
+		this->now = this->now % max;
 	}
 	return *this;
 }
@@ -66,9 +66,9 @@ CircularInt CircularInt::operator--(const int) {
 	return temp;
 }
 CircularInt& CircularInt::operator--() {
-	current--;
-	while (current<first) {
-		current = current + last;
+	now--;
+	while (now<min) {
+		now = now + max;
 	}
 	return *this;
 }
@@ -80,112 +80,112 @@ CircularInt CircularInt::operator++(int) {
 }
 
 CircularInt& CircularInt::operator++() {
-	current++;
-	if (current > last)
+	now++;
+	if (now > max)
 	{
-		current = current % last;
+		now = now % max;
 	}
 	return *this;
 }
 
-CircularInt& CircularInt::operator=(const int number) {
+CircularInt& CircularInt::operator=(const int num) {
 
-	current = number;
-	if (current > last)
+	now = num;
+	if (now > max)
 	{
-		current = current % last;
+		now = now % max;
 	}
-	while (current<first) {
-		current += last;
+	while (now<min) {
+		now += max;
 	}
 	return *this;
 }
 
-CircularInt& CircularInt::operator=(const CircularInt& hour) {
-	current = hour.current;
-	if (current > last)
+CircularInt& CircularInt::operator=(const CircularInt& h) {
+	now = h.now;
+	if (now > max)
 	{
-		current = current % last;
+		now = now % max;
 	}
-	while (current<first) {
-		current += last;
+	while (now<min) {
+		now += max;
 	}
 	return *this;
 
 }
 
-CircularInt& CircularInt::operator*=(const int number) {
+CircularInt& CircularInt::operator*=(const int num) {
 
-	this->current *= number;
+	this->now *= num;
 
-	while (current > last)
+	while (now > max)
 	{
-		current -= last;
+		now -= max;
 	}
-	while (current < first)
+	while (now < min)
 	{
-		current += last;
-	}
-
-	return *this;
-}
-CircularInt& CircularInt::operator*=(const CircularInt& hour) {
-	this->current *= hour.current;
-
-	while (current > last)
-	{
-		current -= last;
-	}
-	while (current < first)
-	{
-		current += last;
+		now += max;
 	}
 
 	return *this;
 }
+CircularInt& CircularInt::operator*=(const CircularInt& h) {
+	this->now *= h.now;
 
-CircularInt& CircularInt::operator/=(const int number) {
-
-	for (int i = this->first; i < this->last; i++)
+	while (now > max)
 	{
-		int temp = i * number;
-		while (temp>this->last) {
-			temp -= this->last;
+		now -= max;
+	}
+	while (now < min)
+	{
+		now += max;
+	}
+
+	return *this;
+}
+
+CircularInt& CircularInt::operator/=(const int num) {
+
+	for (int i = this->min; i < this->max; i++)
+	{
+		int temp = i * num;
+		while (temp>this->max) {
+			temp -= this->max;
 		}
 
-		while (temp<this->first) {
-			temp += this->last;
+		while (temp<this->min) {
+			temp += this->max;
 		}
 
-		if (temp == this->current)
+		if (temp == this->now)
 		{
-			this->current = i;
+			this->now = i;
 			return *this;
 		}
 	}
 
-	throw string("There is no number x in {" + to_string(this->first) + "," + to_string(this->last) + "} such that x*" + to_string(number) + "=" + to_string(this->current));
+	throw string("There is no number x in {" + to_string(this->min) + "," + to_string(this->max) + "} such that x*" + to_string(num) + "=" + to_string(this->now));
 }
 
-CircularInt& CircularInt::operator/=(const CircularInt& hour) {
-	CircularInt Object(hour);
-	for (int i = this->first; i < this->last; i++)
+CircularInt& CircularInt::operator/=(const CircularInt& h) {
+	CircularInt Object(h);
+	for (int i = this->min; i < this->max; i++)
 	{
-		int temp = i * Object.current;
-		while (temp>this->last) {
-			temp -= this->last;
+		int temp = i * Object.now;
+		while (temp>this->max) {
+			temp -= this->max;
 		}
 
-		while (temp<this->first) {
-			temp += this->last;
+		while (temp<this->min) {
+			temp += this->max;
 		}
 
-		if (temp == Object.current)
+		if (temp == Object.now)
 		{
-			this->current = i;
+			this->now = i;
 			return *this;
 		}
 	}
 
-	throw string("There is no number x in {" + to_string(this->first) + "," + to_string(this->last) + "} such that x*" + to_string(Object.current) + "=" + to_string(this->current));
+	throw string("There is no number x in {" + to_string(this->min) + "," + to_string(this->max) + "} such that x*" + to_string(Object.now) + "=" + to_string(this->now));
 }
